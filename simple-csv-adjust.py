@@ -4,9 +4,9 @@ import math
 import re
 
 # Tables to check
-example_table = [
-    [1, "a"], [2, "b"], [3, "c"]
-]
+#example_table = [
+#    [1, "a"], [2, "b"], [3, "c"]
+#]
 
     # Separate text, str_id = position before of separation (0 = first string)
 def separate_lines(original_str, str_id, fail_result=None):
@@ -38,7 +38,7 @@ def separate_regex(original_str, regex_str, str_id, fail_result=None):
     except:
         return fail_result
 
-    # Extract text, char_id = position of character to start (0 = first char, "" = last char)
+    # Extract text, char_id = position of character to start (0 = first char, None = last char)
 def extract_to_pos(original_str, start_char, end_char=None, fail_result=None):
     try:
         new_str = original_str[start_char:end_char] if end_char is not None else original_str[start_char:]
@@ -97,13 +97,13 @@ def main():
 
     # Show info
     input_headers = [
-        "col-1", "col-2", "col-3", "col-4", "col-5"
+    #    "col-1", "col-2", "col-3", "col-4", "col-5"
 ]
     print("Needed fields on input file: " + input_headers) 
 
     # Define output headers
     output_headers = [
-        "col-a", "col-b", "col-c", "col-d", "col-e", "col-f", "col-g"
+    #    "col-a", "col-b", "col-c", "col-d", "col-e", "col-f", "col-g"
 ]
 
     # Process rows
@@ -133,7 +133,7 @@ def main():
         
         # Table search
         #col_5 = row.get("col-5", "")
-        #test = condition_check([(col_5 < 1, 1), (col_5 > 3, 3),], col_5)
+        #test = condition_check([(col_5 < 1, 1), (col_5 > 3, 3)], col_5)
         #new_row["col-g"] = table_check(test, example_table, 1, True, "error")
 
         output_rows.append(new_row)
